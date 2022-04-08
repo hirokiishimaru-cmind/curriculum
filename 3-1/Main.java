@@ -18,16 +18,29 @@ public class Main{
             System.out.print(data[i] + " ");
         }
         System.out.println();
-        for (int i = 0; i < data.length-1; i++) {
-            for (int j = i + 1; j < data.length; j++) {
+        // for (int i = 0; i < data.length-1; i++) {
+        //     for (int j = i + 1; j < data.length; j++) {
+        //         /*
+        //         * 問3
+        //         * 以下、配列の添字を入れてソートを完成させなさい
+        //         */
+        //         if(data[i] > data[j]){
+        //           int box = data[i];
+        //           data[i] = data[j];
+        //           data[j] = box;
+        //         }
+        //     }
+        // }
+        for (int i = 0; i < data.length-1 ; i++) {  //隣同士を比較する数
+            for (int j = data.length-1 ; j > i; j--) {  //重複確認を防ぐ(確認する必要のないものを確認しないため)
                 /*
                 * 問3
                 * 以下、配列の添字を入れてソートを完成させなさい
                 */
-                if(data[i] > data[j]){
-                  int box = data[i];
-                  data[i] = data[j];
-                  data[j] = box;
+                if(data[j-1] > data[j]){    //data[j-1]がdata[i]より大きい場合の条件式
+                  int box = data[j];    //変数boxにdata[j]を代入
+                  data[j] = data[j-1];  //data[j]が入っていた値に、data[j-1]を代入
+                  data[j-1] = box;  //data[j-1]が入っていた値にboxの値を代入
                 }
             }
         }

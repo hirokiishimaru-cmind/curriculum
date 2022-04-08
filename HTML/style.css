@@ -1,0 +1,17 @@
+h1{
+    color: red;
+    width: 500px;
+    height: 100px;
+    background-color: #ddd;
+}
+p{
+    font-size: 50px;
+    font-family: "Anenir Next";
+}
+img{
+    width: 500px;
+    height: 500px;
+}
+.select{
+    color: red;
+}

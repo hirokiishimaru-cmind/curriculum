@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>	<!-- XML宣言 -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+	<!-- 本体の記述 -->
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>	<!-- サーブレットの命名 -->
+		<servlet-class>helloPackage.HelloServlet</servlet-class>	<!-- パッケージ名　.　サーブレット名 -->
+	</servlet>
+	 <!-- servletとservlet-mappingのsarvlet-nameは同じ名前でないといけない -->
+	<servlet-mapping>
+		 <servlet-name>helloServlet</servlet-name>	<!-- サーブレットの命名 -->
+		 <url-pattern>/sample</url-pattern>	<!-- URLのパターン名 -->
+		 <!-- ブラウザのURL（アドレス）などで指定した場合、動かしたいサーブレットが動作する仕組み -->
+	</servlet-mapping>
+</web-app>

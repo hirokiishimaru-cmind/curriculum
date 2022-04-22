@@ -77,7 +77,8 @@ public class EmployeeService {
  */
  preparedStatement = connection.prepareStatement(SQL_SELECT);
   //問⑥ 一番目のindexにIDをセットしてください。2番目のindexにPASSWORDをセット。
- 
+ preparedStatement.setString(1, id);
+ preparedStatement.setString(2, password);
   // SQLを実行。実行した結果をresultSetに格納。
  resultSet = preparedStatement.executeQuery();
  

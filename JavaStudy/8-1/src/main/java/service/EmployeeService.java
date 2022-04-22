@@ -31,11 +31,11 @@ public class EmployeeService {
  
   // 問② 入力された値で、UPDATEする文
  /** ・SQL UPDATE文 */
- private static final String SQL_UPDATE = "UPDATE Employee SET";
+ private static final String SQL_UPDATE = "UPDATE Employee_table SET login_time = ? WHERE id = ?";
  
   // 問③ 入力されたIDとPassWordをキーにして、検索するSELECT文
  /** ・SQL SELECT文 */
- private static final String SQL_SELECT = "SELECT * FROM Employee_table WHERE id = '' AND pass = 'word'";
+ private static final String SQL_SELECT = "SELECT NAME, COMMENT, LOGIN_TIME  FROM Employee_table WHERE id = ? AND pass = ?";
  
  EmployeeBean employeeDate = null;
  
@@ -70,7 +70,7 @@ public class EmployeeService {
  preparedStatement.setString(1, login_time);
  preparedStatement.setString(2, id);
   // 問⑤ UPDATEを実行する文を記述
- preparedStatement.executeUpdate(SQL_UPDATE);
+ preparedStatement.executeUpdate();
  /*
  * UPDATEが成功したものを即座に表示
  * 任意のユーザーを検索できるように、プリペアドステートメントを記述。

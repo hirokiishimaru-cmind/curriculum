@@ -34,6 +34,7 @@ public class EmployeeController extends HttpServlet {
  EmployeeService employeeService = new EmployeeService();
   // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
 // 戻り値に合った型が必要
+ //employeeServiceのemployee変数
  EmployeeBean eb = employeeService.search(id, password);
   // 問④ nullの部分に適切な引数をセットする。
  request.setAttribute("EmployeeBean", eb);

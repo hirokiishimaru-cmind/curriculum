@@ -34,10 +34,21 @@ public class EmployeeController extends HttpServlet {
  EmployeeService employeeService = new EmployeeService();
   // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
 // 戻り値に合った型が必要
- //employeeServiceのemployee変数
+ 
+// 生成したインスタンスからemployeeServiceクラスのsearchメソッドを呼び出し、
+ //EmployeeBean型の変数ebに格納　
+ 
+ //送信された情報(id, password)を取得後、String型に変更し、EmployeeDateに格納
+// Searchメソッドの型はEmployeeBeanであり、
+// 変数EmployeeDataの戻り値の型はEmployeeBeanであるため、格納が可能
  EmployeeBean eb = employeeService.search(id, password);
+ 
   // 問④ nullの部分に適切な引数をセットする。
  request.setAttribute("EmployeeBean", eb);
+//(スコープのオブジェクト).setAttribute("データ名", データ);
+ //requestの中にEmployeeBeanという属性名をつけたebという属性値を格納している
+ //属性の設定
+ //リクエストの範囲内で値を保持する
  
  } catch (Exception e) {
  e.printStackTrace();

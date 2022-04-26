@@ -14,7 +14,7 @@ import bean.EmployeeBean;
 /**
  * ・社員情報検索サービス
  */
- 
+ //コンストラクタ
 public class EmployeeService {
  
   // 問① 接続情報を記述してください
@@ -22,7 +22,7 @@ public class EmployeeService {
  private static final String POSTGRES_DRIVER = "org.postgresql.Driver";
  /** ・JDBC接続先情報 */
  private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/Employee";
- /** ・ユーザー名 */
+ /** ・ユーザー名 */									//
  private static final String USER = "postgres";
  /** ・パスワード */
  private static final String PASS = "dock6132";
@@ -38,10 +38,12 @@ public class EmployeeService {
  private static final String SQL_SELECT = "SELECT NAME, COMMENT, LOGIN_TIME  FROM Employee_table WHERE id = ? AND pass = ?";
  
  EmployeeBean employeeDate = null;
+// 戻り値の型　　変数名
  
   // 送信されたIDとPassWordを元に社員情報を検索するためのメソッド
  public EmployeeBean search(String id, String password) {
- 
+ //修飾子 戻り値の型　　メソッド名
+	 
  Connection connection = null;
  Statement statement = null;
  ResultSet resultSet = null;
@@ -71,6 +73,8 @@ public class EmployeeService {
  preparedStatement.setString(2, id);
   // 問⑤ UPDATEを実行する文を記述
  preparedStatement.executeUpdate();
+// UPDATE文を実行して、ログインタイムを書き換える
+// 
  /*
  * UPDATEが成功したものを即座に表示
  * 任意のユーザーを検索できるように、プリペアドステートメントを記述。
@@ -120,6 +124,7 @@ public class EmployeeService {
  e.printStackTrace();
  }
  }
+// 
  return employeeDate;
  }
 }

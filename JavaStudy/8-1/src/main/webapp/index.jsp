@@ -5,6 +5,7 @@
 <%
  // 問① getAttributeに適切な引数をセットして、EmployeeControllerから渡されたBeanを取得する。
  EmployeeBean employeeBean = (EmployeeBean) request.getAttribute("EmployeeBean");
+/* 属性名EmployeeeBeanを呼び出し、データeb（EmployeeControllerクラスの）を取得し、変数employeeBeanに格納 */
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,6 +22,7 @@
  <table border="1">
  <tr>
  <th>社員名</th>
+ <!-- 変数employeeBeanのgetNameで取得した社員名のデータを表示 -->
  <td><%=employeeBean.getName()%></td>
  </tr>
  <tr>

@@ -34,13 +34,17 @@ public class EmployeeController extends HttpServlet {
  EmployeeService employeeService = new EmployeeService();
   // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
 // 戻り値に合った型が必要
- 
 // 生成したインスタンスからemployeeServiceクラスのsearchメソッドを呼び出し、
  //EmployeeBean型の変数ebに格納　
  
- //送信された情報(id, password)を取得後、String型に変更し、EmployeeDateに格納
-// Searchメソッドの型はEmployeeBeanであり、
-// 変数EmployeeDataの戻り値の型はEmployeeBeanであるため、格納が可能
+ //戻り値EmployeeBeanに格納できる理由↓
+ 
+ //Searchメソッドの戻り値が、EmployeeBean型だから、
+ //EmployeeBeanクラスのインスタンスを生成して、そこにSearchメソッドの戻り値を格納している
+ 
+ //EmployeeServiceクラスのインスタンスからSearchメソッドを呼び出して、戻り値をEmplooyeeBean型の変数ebに格納。
+ //なんで入るの？
+ //戻り値がEmployeeBean型だから
  EmployeeBean eb = employeeService.search(id, password);
  
   // 問④ nullの部分に適切な引数をセットする。

@@ -22,7 +22,7 @@ public class EmployeeService {
  private static final String POSTGRES_DRIVER = "org.postgresql.Driver";
  /** ・JDBC接続先情報 */
  private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/Employee";
- /** ・ユーザー名 */									//
+ /** ・ユーザー名 */								//プロコトル
  private static final String USER = "postgres";
  /** ・パスワード */
  private static final String PASS = "dock6132";
@@ -32,11 +32,12 @@ public class EmployeeService {
   // 問② 入力された値で、UPDATEする文
  /** ・SQL UPDATE文 */
  private static final String SQL_UPDATE = "UPDATE Employee_table SET login_time = ? WHERE id = ?";
+ //Employee_tabelのidが一致した行のlogin_timeをUPDATEするSQL文を定数SQL_UPDATEに格納
  
   // 問③ 入力されたIDとPassWordをキーにして、検索するSELECT文
  /** ・SQL SELECT文 */
- private static final String SQL_SELECT = "SELECT NAME, COMMENT, LOGIN_TIME  FROM Employee_table WHERE id = ? AND pass = ?";
- 
+ private static final String SQL_SELECT = "SELECT NAME, COMMENT, LOGIN_TIME FROM Employee_table WHERE id = ? AND pass = ?";
+// idがプライマリーキーだから
  EmployeeBean employeeDate = null;
 // 戻り値の型　　変数名
  

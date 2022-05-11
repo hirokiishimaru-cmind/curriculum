@@ -5,7 +5,12 @@
 <%
  // 問① getAttributeに適切な引数をセットして、EmployeeControllerから渡されたBeanを取得する。
  EmployeeBean employeeBean = (EmployeeBean) request.getAttribute("EmployeeBean");
-/* 属性名EmployeeeBeanを呼び出し、データeb（EmployeeControllerクラスの）を取得し、変数employeeBeanに格納 */
+/* 属性名EmployeeeBeanを呼び出し、それに対応した属性値eb（EmployeeControllerクラスの）を取得し、変数employeeBeanに格納 */
+/* 戻り値がobject型　型が違うからキャストにemployeeBean型に格納 */
+/* getはobject型にかできない */
+/* キャスト */
+/* 全てのクラスがobjectを継承している */
+/*  */
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
